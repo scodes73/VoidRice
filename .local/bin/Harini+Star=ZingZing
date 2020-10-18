@@ -1,0 +1,14 @@
+#!/bin/bash
+cd ~
+cat <<EOF >~/20-intel.conf
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree"    "true"
+EndSection
+EOF
+cd /etc/X11/xorg.conf.d/
+sudo mv ~/20-intel.conf .
+echo " Malla malla chepthunnam, Oka manchi manasuni gurthinchandi"
+echo " Jai Star! Jai Madam!"
+echo " 73"

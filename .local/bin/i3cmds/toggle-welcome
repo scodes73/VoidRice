@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Toggles the SARBS welcome message.
+
+PIC="${XDG_DATA_HOME:-$HOME/.local/share}/SARBS/SARBS.png"
+
+grep SARBSWELCOME "$XDG_CONFIG_HOME/xprofile" &&
+	( sed -i "/SARBSWELCOME/d" "$XDG_CONFIG_HOME/xprofile" && notify-send -i "$PIC" "SARBS welcome message" "Welcome message disabled. Press Super+Shift+F1 again to reverse." ) ||
+	( echo "notify-send -i \"$PIC\" \"Welcome to SARBS\" \"Press super+F1 for the help menu.\" # SARBSWELCOME" >> "$XDG_CONFIG_HOME/xprofile" &&
+		notify-send -i "$PIC" "SARBS welcome message" "Welcome message re-enabled." )

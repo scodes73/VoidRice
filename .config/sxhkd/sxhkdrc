@@ -1,0 +1,164 @@
+# The Simple X Hotkey Daemon is the program used by SARBS to map most of the
+# dwm-independent commands.  This file is pretty readable, so I'll let you read
+# it.
+
+# The keys NOT bound here by sxhkd, but by dwm or i3 are:
+# The t thru p keys on the top row
+# The f thru ; keys on the home row
+# The b key on the bottom row (hides the bar in either case)
+
+#Custom
+#LockScreen with suspend
+control+shift+l
+	betterlockscreen -s
+
+# Basic binds
+super + Return
+	$TERMINAL
+control+shift+Return
+	$TERMINAL
+super + d
+	dmenu_run
+# Et cetera...
+super + grave
+	dmenuunicode
+super + Scroll_Lock
+	killall screenkey || screenkey
+super + Insert
+	showclip
+super + shift + x
+	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+super + shift + BackSpace
+	prompt "Reboot computer?" "sudo -A reboot"
+super + shift + Escape
+	prompt 'Leave Xorg?' 'killall Xorg'
+#super + x
+	#ifinstalled slock && ( slock & xset dpms force off ; mpc pause ; pauseallmpv )
+XF86Launch1
+	xset dpms force off
+XF86TouchpadToggle
+	(synclient | grep "TouchpadOff.*1" && synclient TouchpadOff=0) || synclient TouchpadOff=1
+XF86Touchpad{Off,On}
+	synclient TouchpadOff={1,0}
+XF86MonBrightnessDown
+	xbacklight -dec 5
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+#Screeshot Configs
+
+#Full to folder
+Print
+	maim --hidecursor ~/Pictures/Screenshots/$(date +%d-%h-%y-%H:%M:%S).png
+
+#region to folder
+shift+Print
+	maim --select --hidecursor | tee ~/Pictures/Screenshots/$(date +%d-%h-%y-%H:%M:%S).png | xclip -selection clipboard -t image/png
+
+#Full to clipboard
+super+Print
+	maim --hidecursor | xclip -selection clipboard -t image/png
+
+#region to clipboard
+super+shift+Print
+	maim --select --hidecursor | xclip -selection clipboard -t image/png
+# Recording
+# Take screenshot
+#Print
+#	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+## Pick screenshot type
+#shift + Print
+#	maimpick
+## Print: Record audio or video; Del: kill recording
+#super + Print
+#	dmenurecord
+#super + Delete
+#	dmenurecord kill
+#
+## Pause audio
+#super + p
+#	mpc toggle
+#super + shift + p
+#	mpc pause; pauseallmpv
+## Changes to next/previous tracks
+#super + {comma,period}
+#	mpc {prev,next}
+## Restart track
+#super + shift + less
+#	mpc seek 0%
+## Seek foward in song
+#super + {_,shift +} bracketright
+#	mpc seek +{10,120}
+## Seek backward in song
+#super + {_,shift +} bracketleft
+#	mpc seek -{10,120}
+## Increase volume
+#super + {equal,plus}
+#	amixer sset Master {5,15}%+; pkill -RTMIN+10 blocks
+## Decrease volume
+#super {_,shift +} + minus
+#	amixer sset Master {5,15}%-; pkill -RTMIN+10 blocks
+#super + shift + m
+#	amixer sset Master toggle; pkill -RTMIN+10 blocks
+#
+# Audiokeys
+#XF86AudioMute
+#	amixer sset Master toggle; pkill -RTMIN+10 blocks
+#XF86Audio{Raise,Lower}Volume
+#	amixer sset Master 5%{+,-}; pkill -RTMIN+10 blocks
+#XF86Audio{Next,Prev}
+#		mpc {next,prev}
+#	XF86Audio{Pause,Play,Stop}
+#		mpc {pause,play,stop}
+#	XF86Audio{Rewind,Forward}
+#		mpc seek {-,+}10
+#	XF86AudioRecord
+#		dmenurecord
+#	XF86AudioMedia
+#		$TERMINAL -e ncmpcpp
+
+#XF86PowerOff
+#	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+#XF86Calculator
+#	$TERMINAL -e bc
+#XF86Sleep
+#	prompt 'Hibernate computer?' 'sudo -A zzz'
+#XF86WWW
+#	$BROWSER
+#XF86DOS
+#	$TERMINAL
+#XF86ScreenSaver
+#	mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
+#XF86TaskPane
+#	$TERMINAL -e htop
+#XF86Mail
+#	$TERMINAL -e neomutt
+#XF86MyComputer
+#	$TERMINAL -e $FILE /
+#
+# Function keys
+super + shift + F1
+	grep SARBSWELCOME ~/.xprofile && ( sed -i "/SARBSWELCOME/d" ~/.xprofile && notify-send "SARBS welcome message" "Welcome message disabled. Press Super+Shift+F1 again to reverse." ) || ( echo "notify-send -i "${XDG_DATA_HOME:-$HOME/.local/share}/SARBS/SARBS.png" \"Welcome to SARBS\" \"Press super+F1 for the help menu.\" # SARBSWELCOME" >> ~/.xprofile && notify-send "SARBS welcome message" "Welcome message re-enabled." )
+# Show readme
+#super + F1
+#groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/SARBS/readme.mom -Tpdf | zathura -
+# F2 restarts either dwm or i3 and is bound in each.
+# Change display
+super + F3
+	displayselect
+# Hibernate
+super + F4
+	prompt 'Hibernate computer?' 'sudo -A zzz -Z'
+super + F5 is unbound.
+# Start torrent daemon/open interface
+super + F6
+	torwrap
+# toggle torrent daemon
+super + F7
+	td-toggle
+# sync email
+super + F8
+	mw sync
+# Mount a USB drive or Android device
+super + {F9,F10}
+	{dmenumount,dmenuumount}

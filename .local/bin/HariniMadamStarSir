@@ -1,0 +1,18 @@
+#!/bin/bash
+sudo mkdir -p /etc/X11/xorg.conf.d
+cd ~
+cat <<EOF >~/30-touchpad.conf
+Section "InputClass"
+        Identifier "MyTouchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+	Option "ClickMethod" "clickfinger"
+	Option "NaturalScrolling" "true"
+EndSection
+EOF
+cd /etc/X11/xorg.conf.d/
+sudo mv ~/30-touchpad.conf .
+echo " Eppatikaina Star ey thop idhi gurthupettukondi"
+echo " Jai Star! Jai Madam!"
+echo " 73"

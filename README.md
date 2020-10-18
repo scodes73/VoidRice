@@ -1,6 +1,4 @@
-# The Voidrice (s73 Smith <https://s73.xyz>'s dotfiles)
-
-These are the dotfiles deployed by [SARBS](https://SARBS.xyz) and as seen on [my YouTube channel](https://youtube.com/c/s73xyz).
+# The Voidrice (s73's dotfiles)
 
 - Very useful scripts are in `~/.local/bin/`
 - Settings for:
@@ -30,9 +28,9 @@ My setup is pretty modular nowadays.
 I use several suckless programs that are meant to be configured and compiled by the user and I also have separate repos for some other things.
 Check out their links:
 
-- [dwm](https://github.com/s73xyz/dwm) (the window manager I usually use now which is fully compatible with this repo)
-- [st](https://github.com/s73xyz/st) (the terminal emulator assumed to be used by these dotfiles)
-- [mutt-wizard (`mw`)](https://github.com/s73xyz/mutt-wizard) - (a terminal-based email system that can store your mail offline without effort)
+- [dwm](https://github.com/scodes73/dwm) (the window manager I usually use now which is fully compatible with this repo)
+- [st](https://github.com/scodes73/st) (the terminal emulator assumed to be used by these dotfiles)
+- [mutt-wizard (`mw`)](https://github.com/scodes73/mutt-wizard) - (a terminal-based email system that can store your mail offline without effort)
 
 ## Install these dotfiles
 
@@ -42,4 +40,4 @@ Use [SARBS](https://SARBS.xyz) to autoinstall everything:
 curl -LO SARBS.xyz/SARBS.sh
 ```
 
-or clone the repo files directly to your home directory and install [the prerequisite programs](https://github.com/s73xyz/SARBS/blob/master/progs.csv).
+or clone the repo files directly to your home directory and install [the prerequisite programs](https://github.com/scodes73/SARBS/blob/master/progs.csv).

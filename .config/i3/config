@@ -1,5 +1,5 @@
 # vim: filetype=i3
-# File originally by s73 Smith <https://s73.xyz>
+# File originally by s73  <https://s73.xyz>
 
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:

@@ -4,7 +4,7 @@
 ..
 .PARA_SPACE 1m
 .TITLE "\s+(10A Friendly Guide to SARBS!\s0"
-.AUTHOR "\s+5s73 Smith\s0"
+.AUTHOR "\s+5s73 \s0"
 .DOCTYPE    DEFAULT
 .COPYSTYLE  FINAL
 .PRINTSTYLE TYPESET
@@ -173,7 +173,7 @@ Naturally, you can use \f(CWyay\fP to look for and install any you want to add.
 \f(CWMod+F7\fP \(en Toggle on/off transmission client via dmenu
 .ITEM
 \f(CWMod+F8\fP \(en Check mail, if
-.PDF_WWW_LINK "https://github.com/s73xyz/mutt-wizard" "mutt-wizard"
+.PDF_WWW_LINK "https://github.com/scodes73/mutt-wizard" "mutt-wizard"
 is installed.
 .ITEM
 \f(CWMod+F9\fP \(en Mount a USB drive/hard drive or Android
@@ -315,7 +315,7 @@ This will overwrite the original config files though, including changes you made
 .PDF_WWW_LINK "https://s73.xyz/donate" "https://s73.xyz/donate"
 \(en To incentivize more development of SARBS!
 .ITEM
-.PDF_WWW_LINK "https://github.com/s73xyz" "My Github Page"
+.PDF_WWW_LINK "https://github.com/scodes73" "My Github Page"
 \(en For the code behind it!
 .ITEM
 .PDF_WWW_LINK "http://s73.xyz/rss.xml" "RSS"

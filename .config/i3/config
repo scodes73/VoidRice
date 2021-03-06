@@ -1,5 +1,5 @@
 # vim: filetype=i3
-# File originally by s73  <https://s73.xyz>
+# File originally by Luke Smith <https://lukesmith.xyz>
 
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
@@ -222,7 +222,7 @@ for_window [title="mpvfloat"] border pixel 0
 no_focus [title="mpvfloat"]
 
 # #---Function Buttons---# #
-bindsym $mod+F1		exec --no-startup-id groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/SARBS/readme.mom -Tpdf | zathura -
+bindsym $mod+F1		exec --no-startup-id groff -mom ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/readme.mom -Tpdf | zathura -
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
 bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
@@ -314,7 +314,7 @@ bindsym XF86AudioRewind		exec --no-startup-id mpc seek -10
 bindsym XF86AudioForward	exec --no-startup-id mpc seek +10
 ##bindsym XF86Phone		exec
 ##bindsym XF86Tools		exec
-bindsym XF86HomePage		exec $BROWSER https://s73.xyz
+bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
 bindsym XF86Reload		restart
 ##bindsym XF86ScrollUp		exec
 ##bindsym XF86ScrollDown		exec

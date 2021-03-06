@@ -1,4 +1,4 @@
-# s73's ranger setup
+# Luke's ranger setup
 
 ## Basic Ranger shortcuts
 

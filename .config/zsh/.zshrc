@@ -1,4 +1,3 @@
-# s73's config for the Zoomer Shell
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
@@ -79,3 +78,12 @@ bindkey '^e' edit-command-line
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+export ANDROID_SDK_ROOT=/home/sap/Downloads/Dev/Android/Sdk
+export ANDROID_HOME=/home/sap/Downloads/Dev/Android/Sdk
+export JAVA_HOME=/home/sap/Downloads/Dev/Java/jdk-15.0.2
+export PATH="$PATH:/home/sap/Downloads/Dev/Android/Sdk/cmdline-tools/tools/bin"
+export PATH="$PATH:/home/sap/Downloads/Dev/Android/Sdk/cmdline-tools/latest/bin"
+export PATH="$PATH:/home/sap/Downloads/Dev/flutter/bin"
+export PATH="$PATH:/home/sap/Downloads/Dev/Android/Sdk/platform-tools"
+export PATH="$PATH:/home/sap/Downloads/Dev/Android/Sdk/cmdline-tools/tools/bin"

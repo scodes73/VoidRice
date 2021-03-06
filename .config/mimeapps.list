@@ -1,12 +1,8 @@
 [Default Applications]
-
-# xdg-open will use these settings to determine how to open filetypes.
-# These .desktop entries can also be seen and changed in ~/.local/share/applications/
-
 text/x-shellscript=text.desktop;
-x-scheme-handler/magnet=torrent.desktop;
-application/x-bittorrent=torrent.desktop;
-x-scheme-handler/mailto=mail.desktop;
+x-scheme-handler/magnet=transmission-gtk.desktop
+application/x-bittorrent=transmission-gtk.desktop
+x-scheme-handler/mailto=brave-browser.desktop
 text/plain=text.desktop;
 application/postscript=pdf.desktop;
 application/pdf=pdf.desktop;
@@ -17,3 +13,17 @@ application/rss+xml=rss.desktop
 video/x-matroska=video.desktop
 x-scheme-handler/lbry=lbry.desktop
 inode/directory=file.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+application/x-shellscript=leafpad.desktop;
+application/x-theme=leafpad.desktop;nvim.desktop;
+text/x-c++src=leafpad.desktop;
+text/plain=leafpad.desktop;
+text/html=chromium.desktop;VSCodium.desktop;leafpad.desktop;
+image/jpeg=feh.desktop;
+application/x-bittorrent=transmission-gtk.desktop;
+text/x-chdr=vim.desktop;
+text/vnd.qt.linguist=leafpad.desktop;
+application/zip=engrampa.desktop;userapp-Send via KDE Connect-UT6TW0.desktop;
+application/vnd.android.package-archive=userapp-Send via KDE Connect-CFEOY0.desktop;

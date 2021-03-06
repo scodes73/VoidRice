@@ -14,7 +14,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'prabirshrestha/async.vim'
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'ajh17/vimcompletesme'
-"Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 "split navigations
@@ -28,7 +28,7 @@ set splitright
 
 " NerdTree stuff
 "autocmd vimenter * NERDTree
-map <C-q> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "right"
 
 " Enable folding
@@ -103,25 +103,24 @@ colorscheme PaperColor
 let g:palenight_terminal_italics=1
 
 set nu rnu
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set ruler
 set showcmd
 set noswapfile
 set noshowmode
 set omnifunc=syntaxcomplete#Complete
-"set omnifunc=lsp#Complete
-
+"set omnifunc=lsp#Complete 
 set backspace=indent,eol,start " let backspace delete over lines
 set autoindent " enable auto indentation of lines
 set smartindent " allow vim to best-effort guess the indentation
 set pastetoggle=<F2> " enable paste mode
 
-set wildmenu "graphical auto complete menu
 set lazyredraw "redraws the screne when it needs to
 set showmatch "highlights matching brackets
 set smartcase
 set incsearch "search as characters are entered
 set hlsearch "highlights matching searcher
+set hidden
 " clears highlights
 nnoremap // :noh<return>
 
@@ -133,6 +132,8 @@ nnoremap \ :te<enter>
 "autocmd filetype java nnoremap <f5> :w <bar> !javac % && java %:r <cr>'
 source $HOME/.config/nvim/cp.vim
 
+set wildmenu "graphical auto complete menu
+set wildmode=longest,list,full
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost files,directories !shortcuts
 " Run xrdb whenever Xdefaults or Xresources are updated.
@@ -158,9 +159,18 @@ source $HOME/.config/nvim/cp.vim
 "     augroup end
 " endif
 "
-"let g:clang_format#auto_format=1
-"autocmd FileType cpp ClangFormatAutoEnable
-" let g:clang_c_options = '-std=gnu11'
-" let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-"autocmd FileType cpp let b:vcm_tab_complete = 'omni'
-"set mouse=a
+let g:clang_format#auto_format=1
+autocmd FileType cpp ClangFormatAutoEnable
+ let g:clang_c_options = '-std=gnu11'
+ let g:clang_cpp_options = '-std=c++14 -stdlib=libc++'
+autocmd FileType cpp let b:vcm_tab_complete = 'omni'
+set mouse=a
+
+"You can accomplish it by placing
+
+" autocmd BufNewFile *.cpp norm i#include<bits/stdc++.h> using namespace std;
+" Cursor line
+set cursorline
+set cursorcolumn
+" Vertically center document when entering insert mode
+autocmd InsertEnter * norm zz
